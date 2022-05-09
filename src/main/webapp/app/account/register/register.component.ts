@@ -19,6 +19,7 @@ export class RegisterComponent implements AfterViewInit {
   errorEmailExists = false;
   errorUserExists = false;
   success = false;
+  userType?: string;
 
   registerForm = this.fb.group({
     login: [
