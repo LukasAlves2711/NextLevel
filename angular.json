@@ -95,6 +95,7 @@
   },
   "defaultProject": "next-level",
   "cli": {
+    "analytics": "6d2cfdcc-689a-43cf-8d5f-af901a17c82a",
     "packageManager": "npm"
   }
 }
