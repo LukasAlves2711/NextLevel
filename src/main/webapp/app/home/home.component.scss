@@ -2,12 +2,13 @@
 Main page styles
 ========================================================================== */
 
-.hipster {
+.NextLevel {
   display: inline-block;
-  width: 347px;
+  width: 260px;
   height: 497px;
-  background: url('../../content/images/jhipster_family_member_1.svg') no-repeat center top;
+  background: url('../../content/images/nextlevel.png') no-repeat center top;
   background-size: contain;
+  margin-left: 0%;
 }
 
 /* wait autoprefixer update to allow simple generation of high pixel density media query */
