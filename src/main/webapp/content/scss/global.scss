@@ -41,9 +41,13 @@ Generic styles
 /* other generic styles */
 
 .jh-card {
+  width: 1300px;
+  height: 520px;
   padding: 1.5%;
   margin-top: 20px;
   border: none;
+  background-color: rgb(170, 167, 165);
+  background-image: url('../../content/images/backg.png');
 }
 
 .error {
@@ -171,3 +175,31 @@ ui bootstrap tweaks
 }
 
 /* jhipster-needle-scss-add-main JHipster will add new css style */
+.title {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(11, 81, 187);
+}
+
+.alerta {
+  background-color: #303030;
+}
+.alerta {
+  border: none;
+  color: #fff;
+}
+.alerta {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.register {
+  font-weight: 700;
+}
+.register {
+  color: rgb(8, 173, 250);
+  text-decoration: none;
+  background-color: transparent;
+}

@@ -1,10 +1,8 @@
 <div class="row">
-  <div class="col-md-3">
-    <span class="NextLevel"></span>
-  </div>
+  <div class="col-md-3"></div>
 
-  <div class="col-md-9">
-    <h1 class="display-4" jhiTranslate="home.title">Welcome next level experience</h1>
+  <div class="col-md-9" id="div home">
+    <h1 class="title" jhiTranslate="home.title">Welcome next level experience</h1>
 
     <div [ngSwitch]="isAuthenticated()">
       <div class="alert alert-success" *ngSwitchCase="true">
@@ -12,9 +10,9 @@
           >You are logged in as user "{{ account.login }}".</span
         >
       </div>
-      <div class="alert alert-warning" *ngSwitchCase="false">
+      <div class="alerta" *ngSwitchCase="false">
         <span jhiTranslate="global.messages.info.register.noaccount">You don't have an account yet?</span>&nbsp;
-        <a class="alert-link" routerLink="account/register" jhiTranslate="global.messages.info.register.link">Register a new account</a>
+        <a class="register" routerLink="account/register" jhiTranslate="global.messages.info.register.link">Register a new account</a>
       </div>
     </div>
   </div>
