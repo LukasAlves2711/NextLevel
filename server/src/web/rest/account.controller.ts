@@ -20,6 +20,12 @@ import { UserDTO } from '../../service/dto/user.dto';
 import { LoggingInterceptor } from '../../client/interceptors/logging.interceptor';
 import { ApiBearerAuth, ApiUseTags, ApiResponse, ApiOperation } from '@nestjs/swagger';
 import { AuthService } from '../../service/auth.service';
+import { TypeEmpresaDTO } from '../../service/dto/type-empresa.dto';
+import { EmpresaDTO } from '../../service/dto/empresa.dto';
+import { EmpresaService } from '../../service/empresa.service';
+import { TypeInfluenciadorDTO } from '../../service/dto/type-influenciador.dto';
+import { InfluenciadorService } from '../../service/influenciador.service';
+import { InfluenciadorDTO } from '../../service/dto/influenciador.dto';
 
 @Controller('api')
 @UseInterceptors(LoggingInterceptor, ClassSerializerInterceptor)
@@ -27,7 +33,11 @@ import { AuthService } from '../../service/auth.service';
 export class AccountController {
     logger = new Logger('AccountController');
 
-    constructor(private readonly authService: AuthService) {}
+    constructor(
+        private readonly authService: AuthService,
+        private readonly empresaService: EmpresaService,
+        private readonly influenciadorService: InfluenciadorService
+    ) {}
 
     @Post('/register')
     @ApiOperation({ title: 'Register user' })
@@ -38,6 +48,69 @@ export class AccountController {
     })
     async registerAccount(@Req() req: Request, @Body() userDTO: UserDTO & { password: string }): Promise<any> {
         return await this.authService.registerNewUser(userDTO);
+    }
+
+    //Regiter company
+    @Post('/register/company')
+    @ApiOperation({ title: 'Register company' })
+    @ApiResponse({
+        status: 201,
+        description: 'Registered company',
+        type: UserDTO,
+    })
+    async registerCompany(@Req() req: Request, @Body() typeEmpresaDTO: TypeEmpresaDTO & { password: string }): Promise<any> {
+        let userDTO: UserDTO = {
+            login: typeEmpresaDTO.login,
+            langKey: typeEmpresaDTO.langKey,
+            email: typeEmpresaDTO.email,
+            password: typeEmpresaDTO.password
+        }
+            
+        const resultUser = await this.authService.registerNewUser(userDTO);
+        
+        let companyDTO: EmpresaDTO = {
+            nome: typeEmpresaDTO.nome,
+            regiao: typeEmpresaDTO.regiao,
+            nicho: typeEmpresaDTO.nicho,
+            site: typeEmpresaDTO.site,
+            user: resultUser,
+            influenciadors: null
+        }
+
+        const resultCompany = await this.empresaService.save(companyDTO, resultUser.login);
+        return resultUser;
+    }
+
+    //Regiter influencer
+    @Post('/register/influencer')
+    @ApiOperation({ title: 'Register influencer' })
+    @ApiResponse({
+        status: 201,
+        description: 'Registered influencer',
+        type: UserDTO,
+    })
+    async registerInfluencer(@Req() req: Request, @Body() typeInfluenciadorDTO: TypeInfluenciadorDTO & { password: string }): Promise<any> {
+        let userDTO: UserDTO = {
+            login: typeInfluenciadorDTO.login,
+            langKey: typeInfluenciadorDTO.langKey,
+            email: typeInfluenciadorDTO.email,
+            password: typeInfluenciadorDTO.password
+        }
+            
+        const resultUser = await this.authService.registerNewUser(userDTO);
+        
+        let influencerDTO: InfluenciadorDTO = {
+            nome: typeInfluenciadorDTO.nome,
+            email: typeInfluenciadorDTO.email,
+            regiao: typeInfluenciadorDTO.regiao,
+            bio: typeInfluenciadorDTO.bio,
+            redes: typeInfluenciadorDTO.redes,
+            user: resultUser,
+            empresas: null,
+        }
+
+        const resultInfluence = await this.influenciadorService.save(influencerDTO, resultUser.login);
+        return resultUser;
     }
 
     @Get('/activate')

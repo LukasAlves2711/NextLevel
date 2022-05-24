@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { ApplicationConfigService } from 'app/core/config/application-config.service';
-import { Registration } from './register.model';
+import { Registration, RegistrationCompany, RegistrationInfluencer } from './register.model';
 
 @Injectable({ providedIn: 'root' })
 export class RegisterService {
@@ -11,5 +11,13 @@ export class RegisterService {
 
   save(registration: Registration): Observable<{}> {
     return this.http.post(this.applicationConfigService.getEndpointFor('api/register'), registration);
+  }
+
+  saveCompany(registration: RegistrationCompany): Observable<{}> {
+    return this.http.post(this.applicationConfigService.getEndpointFor('api/register/company'), registration);
+  }
+
+  saveInfluencer(registration: RegistrationInfluencer): Observable<{}> {
+    return this.http.post(this.applicationConfigService.getEndpointFor('api/register/influencer'), registration);
   }
 }

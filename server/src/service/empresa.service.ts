@@ -4,6 +4,7 @@ import { FindManyOptions, FindOneOptions } from 'typeorm';
 import { EmpresaDTO } from '../service/dto/empresa.dto';
 import { EmpresaMapper } from '../service/mapper/empresa.mapper';
 import { EmpresaRepository } from '../repository/empresa.repository';
+import { TypeEmpresaDTO } from './dto/type-empresa.dto';
 
 const relationshipNames = [];
 relationshipNames.push('influenciadors');
@@ -48,6 +49,7 @@ export class EmpresaService {
         return EmpresaMapper.fromEntityToDTO(result);
     }
 
+    
     async update(empresaDTO: EmpresaDTO, updater?: string): Promise<EmpresaDTO | undefined> {
         const entity = EmpresaMapper.fromDTOtoEntity(empresaDTO);
         if (updater) {
