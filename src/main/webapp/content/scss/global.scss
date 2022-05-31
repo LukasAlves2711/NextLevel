@@ -47,7 +47,7 @@ Generic styles
 }
 
 .jh-card {
-  width: 1500px;
+  width: 1300px;
   height: 500px;
   padding: 1.5%;
   margin-top: 20px;
@@ -215,4 +215,61 @@ ui bootstrap tweaks
   color: rgb(8, 173, 250);
   text-decoration: none;
   background-color: transparent;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-template-columns {
+  grid-template-columns: 200px 200px;
+}
+
+.grid-template-columns-3 {
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+.subgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.subgrid > div {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos Gerais */
+.item {
+  margin: 5px;
+  background: rgb(120, 71, 255);
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.grid {
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+body > div {
+  padding: 40px 0;
+}
+
+body > div:nth-of-type(even) {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.empresa {
+  width: 150%;
+  height: 150%;
+  background-color: rgba(128, 128, 128, 0.425);
+  text-align: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.empresas {
+  display: grid;
+  grid-template-columns: 200px 130px 40%;
 }

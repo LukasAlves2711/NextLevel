@@ -17,3 +17,26 @@
     </div>
   </div>
 </div>
+
+<tbody>
+  <h3>Empresas</h3>
+  <div class="empresas">
+    <tr *ngFor="let empresa of empresas" data-cy="entityTable">
+      <td>
+        <div class="empresa">
+          <h3>{{ empresa.nome }}</h3>
+          <section class="grid">
+            <div class="item">{{ empresa.regiao }}</div>
+            <div class="item">{{ empresa.id }}</div>
+            <div class="item">{{ empresa.nicho }}</div>
+            <div class="item">{{ empresa.site }}</div>
+            <button type="submit" [routerLink]="['/empresa', empresa.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+              <fa-icon icon="eye"></fa-icon>
+              <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+            </button>
+          </section>
+        </div>
+      </td>
+    </tr>
+  </div>
+</tbody>
