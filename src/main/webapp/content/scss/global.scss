@@ -217,6 +217,8 @@ ui bootstrap tweaks
   background-color: transparent;
 }
 
+// grid
+
 .grid {
   display: grid;
 }
@@ -248,7 +250,7 @@ ui bootstrap tweaks
 }
 
 .grid {
-  max-width: 200px;
+  max-width: 280px;
   margin: 0 auto;
 }
 
@@ -262,7 +264,7 @@ body > div:nth-of-type(even) {
 
 .empresa {
   width: 150%;
-  height: 150%;
+  height: 280px;
   background-color: rgba(128, 128, 128, 0.425);
   text-align: center;
   align-items: center;
