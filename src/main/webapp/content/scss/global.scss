@@ -262,20 +262,6 @@ body > div:nth-of-type(even) {
   background: rgba(0, 0, 0, 0.03);
 }
 
-.empresa {
-  width: 150%;
-  height: 280px;
-  background-color: rgba(128, 128, 128, 0.425);
-  text-align: center;
-  align-items: center;
-  padding: 20px;
-}
-
-.empresas {
-  display: grid;
-  grid-template-columns: 200px 130px 40%;
-}
-
 .card-green {
   width: 60%;
   max-height: 400px;
@@ -293,7 +279,7 @@ body > div:nth-of-type(even) {
   left: 0;
   bottom: 0;
   width: 60%;
-  height: 100%;
+  height: 20%;
   transition: 0.5s;
 }
 .card-green .img-box img {
@@ -364,24 +350,123 @@ body > div:nth-of-type(even) {
   background: linear-gradient(0deg, rgba(51, 97, 250, 0.9), transparent);
 }
 /*768PX BREAKPOINT*/
-@media (min-width: 48em) {
+@media (min-width: 10em) {
   .card-green {
     width: 31.33%;
     max-height: 430px;
-    margin-right: 3%;
+    margin-right: -8%;
   }
   .card-green:nth-of-type(3n + 0) {
     margin-right: 0;
   }
 }
 
-.tbodyInf {
-  height: 100%;
-  width: 100%;
-}
-
 // empresas
 
 .card-green .desc.degradeempresa {
   background: linear-gradient(0deg, rgba(210, 51, 250, 0.9), transparent);
+}
+
+.titulo {
+  border-bottom: 1px solid #58116d;
+  margin-bottom: 40px;
+  padding-bottom: 0;
+}
+/*Se quiser centralizar o texto add a class centraliza */
+.titulo.centraliza {
+  text-align: center;
+}
+.titulo h1,
+.titulo h2,
+.titulo h3 {
+  display: inline-block;
+  font-family: 'open_sansbold';
+  font-size: 1.5em;
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.titulo span,
+.titulo span,
+.titulo span {
+  display: inline-block;
+  font-family: 'open_sansregular';
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.titulo span::after,
+.titulo span::after,
+.titulo span::after {
+  content: '';
+  display: block;
+  position: relative;
+  top: 5px;
+  width: 100%;
+  height: 5px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-image: -webkit-linear-gradient(left, #ad06f0 0, #850259 100%);
+  background-image: -o-linear-gradient(left, #a000e0 0, #7c0786 100%);
+  background-image: linear-gradient(to right, #f360e7 0, #85026f 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00d8e0', endColorstr='#028085', GradientType=1);
+}
+
+.titulo-inf {
+  border-bottom: 1px solid #6333e9;
+  margin-bottom: 40px;
+  padding-bottom: 0;
+}
+/*Se quiser centralizar o texto add a class centraliza */
+.titulo-inf.centraliza {
+  text-align: center;
+}
+.titulo-inf h1,
+.titulo-inf h2,
+.titulo-inf h3 {
+  display: inline-block;
+  font-family: 'open_sansbold';
+  font-size: 1.5em;
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.titulo-inf span,
+.titulo-inf span,
+.titulo-inf span {
+  display: inline-block;
+  font-family: 'open_sansregular';
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.titulo-inf span::after,
+.titulo-inf span::after,
+.titulo-inf span::after {
+  content: '';
+  display: block;
+  position: relative;
+  top: 5px;
+  width: 100%;
+  height: 5px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-image: -webkit-linear-gradient(left, #022aac 0, #535ef5 100%);
+  background-image: -o-linear-gradient(left, #0c08f7 0, #3a7ada 100%);
+  background-image: linear-gradient(to right, #1b18e0 0, #3f68f0 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00d8e0', endColorstr='#028085', GradientType=1);
+}
+
+.tbodyInf {
+  background-color: #022aac;
+}
+
+.backhome {
+  display: grid;
 }
