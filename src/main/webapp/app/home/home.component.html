@@ -18,28 +18,32 @@
   </div>
 </div>
 
-<div *ngFor="let influenciador of influenciadors" data-cy="entityTable" class="tbodyInf">
-  <figure class="card-green">
-    <div class="img-box"><img src="u../../content/images/influ-image.png" /></div>
+<div class="backInf">
+  <div *ngFor="let influenciador of influenciadors" data-cy="entityTable" class="tbodyInf">
+    <figure class="card-green">
+      <div class="img-box"><img src="u../../content/images/influ-image.png" /></div>
 
-    <figcaption class="desc degradeGreen">
-      <h4>
-        {{ influenciador.nome }} <br /><span>{{ influenciador.redes }}</span>
-      </h4>
-      <p>{{ influenciador.bio }}</p>
-    </figcaption>
-  </figure>
+      <figcaption class="desc degradeGreen">
+        <h4>
+          {{ influenciador.nome }} <br /><span>{{ influenciador.redes }}</span>
+        </h4>
+        <p>{{ influenciador.bio }}</p>
+      </figcaption>
+    </figure>
+  </div>
 </div>
 
-<div *ngFor="let empresa of empresas" data-cy="entityTable" class="tbodyInf">
-  <figure class="card-green">
-    <div class="img-box"><img src="../../content/images/empr-image.png" /></div>
+<div>
+  <div *ngFor="let empresa of empresas" data-cy="entityTable" class="tbodyInf">
+    <figure class="card-green">
+      <div class="img-box"><img src="../../content/images/empr-image.png" /></div>
 
-    <figcaption class="desc degradeempresa">
-      <h4>
-        {{ empresa.nome }} <br /><span>{{ empresa.regiao }}</span>
-      </h4>
-      <p>{{ empresa.site }}</p>
-    </figcaption>
-  </figure>
+      <figcaption class="desc degradeempresa">
+        <h4>
+          {{ empresa.nome }} <br /><span>{{ empresa.regiao }}</span>
+        </h4>
+        <p>{{ empresa.site }}</p>
+      </figcaption>
+    </figure>
+  </div>
 </div>
